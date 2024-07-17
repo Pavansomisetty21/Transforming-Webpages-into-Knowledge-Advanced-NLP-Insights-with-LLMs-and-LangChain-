@@ -124,7 +124,55 @@ stuff_chain = StuffDocumentsChain(llm_chain=llm_chain, document_variable_name="t
 response = stuff_chain.invoke(input_data)
 print(response["output_text"])
 ```
-and other use cases like webpage data summarization and data extraction from the webpage are in the repo
+### Example Use Case3
+```python
+# Named Entity Recognition of data on web pages Using LangChain with Gemini api key
+
+
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_community.document_loaders import WebBaseLoader
+from langchain.chains import StuffDocumentsChain
+from langchain.chains.llm import LLMChain
+from langchain.prompts import PromptTemplate
+import os
+
+# Set the API key as an environment variable
+os.environ["GOOGLE_API_KEY"] = "AIzaSyBTYrf9s68irCYXJKNs-g7ITEvPuuthERQ"
+
+# Initialize Model with API key
+llm = ChatGoogleGenerativeAI(google_api_key=os.environ["GOOGLE_API_KEY"], model="gemini-pro")
+
+# Load the blog
+loader = WebBaseLoader("https://www.forbesindia.com/blog/education/edtech-needs-corporate-governance-here-are-6-ways-to-achieve-it/")
+docs = loader.load()
+
+# Define the NER Chain
+template = '''Identify and classify all named entities in the text extract clearly and understand the condition when you classify
+donot neglet any text classify all text even a single word and in the  classification process the output will be same as promptify get
+
+
+Text:
+"{text}"
+
+Output Format:
+
+For each identified entity, provide the entity text along with its category. Use the following format:
+
+"E" :[Category] ,"T": [Entity Text]
+
+'''
+
+prompt = PromptTemplate.from_template(template)
+
+llm_chain = LLMChain(llm=llm, prompt=prompt)
+stuff_chain = StuffDocumentsChain(llm_chain=llm_chain, document_variable_name="text")
+
+# Invoke Chain
+response = stuff_chain.invoke(docs)
+print(response["output_text"])
+```
+and other use cases like webpage data summarization in webpage and data extraction from the webpage are in the repo
 ### Summary
 
 In summary, `ChatGoogleGenerativeAI` serves as a bridge between your Python code and Google's advanced Generative AI models, enabling a wide range of natural language processing tasks. Its integration with LangChain enhances its utility by allowing developers to build sophisticated pipelines for tasks like question answering, text generation, and more. This combination of capabilities makes it a powerful tool for developers working with natural language processing in Python environments.
