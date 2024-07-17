@@ -42,7 +42,8 @@ Here’s a typical workflow when using `ChatGoogleGenerativeAI`:
   
 - **Scalability**: Supports scaling up for processing large volumes of text or complex queries efficiently.
 
-### Example Use Case1
+### Example Use Case1  
+QA Pair Generation
 
 ```python
 # Generation of QA pairs on web pages Using LangChain with Gemini api key
@@ -80,7 +81,8 @@ print(response["output_text"])
 
 
 ```
-### Example Use Case2
+### Example Use Case2 
+Question Answering
 ```python
 
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -125,6 +127,7 @@ response = stuff_chain.invoke(input_data)
 print(response["output_text"])
 ```
 ### Example Use Case3
+NER 
 ```python
 # Named Entity Recognition of data on web pages Using LangChain with Gemini api key
 
@@ -138,7 +141,7 @@ from langchain.prompts import PromptTemplate
 import os
 
 # Set the API key as an environment variable
-os.environ["GOOGLE_API_KEY"] = "AIzaSyBTYrf9s68irCYXJKNs-g7ITEvPuuthERQ"
+os.environ["GOOGLE_API_KEY"] = "Your gemini api key"
 
 # Initialize Model with API key
 llm = ChatGoogleGenerativeAI(google_api_key=os.environ["GOOGLE_API_KEY"], model="gemini-pro")
