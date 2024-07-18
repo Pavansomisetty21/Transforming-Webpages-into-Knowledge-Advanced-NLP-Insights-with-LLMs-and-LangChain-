@@ -1,6 +1,10 @@
-![langchain](https://github.com/user-attachments/assets/c66dd9ea-5df5-41aa-b71d-ceab9ff5f706)![langchain](https://github.com/user-attachments/assets/6c941d4f-3ecf-49ab-8460-bda8cc7245e9)
+# Transforming-Webpages-into-Knowledge-Advanced-NLP-Insights-with-LLMs-and-LangChain
 
-# Transforming-Webpages-into-Knowledge-Advanced-NLP-Insights-with-LLMs-and-LangChain-
+![langchain](https://github.com/user-attachments/assets/c66dd9ea-5df5-41aa-b71d-ceab9ff5f706)
+
+
+
+
 In this We perform NLP tasks like QA Pair Generation, Question Answering, Text Summarization and  Data Extraction on the webpages using Large Language Models (Like Gemini ) and Langchain
 Certainly! Let's dive deeper into `ChatGoogleGenerativeAI` to understand its role and functionality in more detail:
 
