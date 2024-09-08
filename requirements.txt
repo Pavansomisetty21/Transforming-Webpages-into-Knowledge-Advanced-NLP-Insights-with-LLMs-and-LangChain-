@@ -1,0 +1,6 @@
+langchain_google_genai
+streamlit
+langchain_community.document_loaders
+langchain.chains
+langchain.prompts
+os
