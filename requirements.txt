@@ -1,6 +1,5 @@
 langchain_google_genai
 streamlit
 langchain_community
-langchain.chains
-langchain.prompts
+langchain
 os
