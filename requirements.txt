@@ -2,4 +2,3 @@ langchain_google_genai
 streamlit
 langchain_community
 langchain
-os
